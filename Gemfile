@@ -41,6 +41,7 @@ gem 'autoprefixer-rails'
 gem 'jquery-rails'
 gem 'figaro'
 gem 'cloudinary'
+gem 'carrierwave', '~> 1.2'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
