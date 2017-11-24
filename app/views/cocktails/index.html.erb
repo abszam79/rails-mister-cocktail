@@ -1,0 +1,23 @@
+
+<div class="container">
+  <div class="row top-page">
+    <h1>Our Cocktails</h1>
+    <div class="btn btn-treehouse">
+  <p><%= link_to "Add a new cocktail", new_cocktail_path %></p>
+</div>
+  </div>
+  <div class="row">
+    <% @cocktails.each do |cocktail| %>
+    <div class="col-xs-12 col-sm-4">
+<!-- insert <div class="card"> -->
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://loremflickr.com/320/240/cocktail');">
+        <h2><%= link_to "", cocktail_path(cocktail), class: "card-link" %></h2>
+        <div class="card-category">Popular</div>
+          <div class="card-description">
+            <p>Very cool cocktail, the best</p>
+          </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
