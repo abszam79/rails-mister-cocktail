@@ -10,10 +10,10 @@
 # Ingredient.create(name: "mint leaves")
 
 
-# require 'json'
-# require 'open-uri'
+require 'json'
+require 'open-uri'
 
-Cocktail.destroy_all
+# Cocktail.destroy_all
 
 # url = "https://raw.githubusercontent.com/teijo/iba-cocktails/master/recipes.json"
 # cocktails_serialized = open(url).read
@@ -24,11 +24,11 @@ Cocktail.destroy_all
 
 Ingredient.destroy_all
 
-# url = "http://www.thecocktaildb.com/api/json/v1/1/list.php?i=list"
-# ingredients_serialized = open(url).read
-# ingredients = JSON.parse(ingredients_serialized)
+url = "http://www.thecocktaildb.com/api/json/v1/1/list.php?i=list"
+ingredients_serialized = open(url).read
+ingredients = JSON.parse(ingredients_serialized)
 
-# ingredients["drinks"].each do |ingredient|
-#   Ingredient.create(name: ingredient['strIngredient1'])
-# end
+ingredients["drinks"].each do |ingredient|
+  Ingredient.create(name: ingredient['strIngredient1'])
+end
 
