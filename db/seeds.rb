@@ -13,14 +13,14 @@
 require 'json'
 require 'open-uri'
 
-Cocktail.destroy_all
+# Cocktail.destroy_all
 
-url = "https://raw.githubusercontent.com/teijo/iba-cocktails/master/recipes.json"
-cocktails_serialized = open(url).read
-cocktails = JSON.parse(cocktails_serialized)
-cocktails.first(12).each do |cocktail|
-Cocktail.create(name: cocktail['name'])
-end
+# url = "https://raw.githubusercontent.com/teijo/iba-cocktails/master/recipes.json"
+# cocktails_serialized = open(url).read
+# cocktails = JSON.parse(cocktails_serialized)
+# cocktails.first(12).each do |cocktail|
+# Cocktail.create(name: cocktail['name'])
+# end
 
 Ingredient.destroy_all
 
