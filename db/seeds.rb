@@ -22,13 +22,13 @@ cocktails.first(10).each do |cocktail|
 Cocktail.create(name: cocktail['name'])
 end
 
+# Ingredient.destroy_all
 
+# url = "http://www.thecocktaildb.com/api/json/v1/1/list.php?i=list"
+# ingredients_serialized = open(url).read
+# ingredients = JSON.parse(ingredients_serialized)
 
-url = "http://www.thecocktaildb.com/api/json/v1/1/list.php?i=list"
-ingredients_serialized = open(url).read
-ingredients = JSON.parse(ingredients_serialized)
-
-ingredients["drinks"].each do |ingredient|
-Ingredient.create(name: ingredient['strIngredient1'])
-end
+# ingredients["drinks"].each do |ingredient|
+# Ingredient.create(name: ingredient['strIngredient1'])
+# end
 
