@@ -23,14 +23,27 @@
  <br />
     <%= link_to "Back to list", cocktails_path %>
     <br /><br />
-
   </div>
 
+  <div class="row">
+    <div class="formulaire">
       <%= simple_form_for [@cocktail, @dose] do |f| %>
   <%= f.input :description %>
   <%= f.association :ingredient, collection: Ingredient.all.order('name ASC') %>
-  <%= f.button :submit %>
+  <%= f.button :submit, class: "btn btn-success" %>
 <% end %>
+
+
+<%= simple_form_for [@cocktail] do |f| %>
+<h3>Pick a new Pic</h3>
+  <%= f.input :photo %>
+  <%= f.input :photo_cache, as: :hidden %>
+  <%= f.button :submit, class: "btn btn-success" %>
+<% end %>
+    </div>
+
+  </div>
+
 
 </div>
     <br /><br />

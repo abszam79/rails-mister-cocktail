@@ -22,6 +22,20 @@ class CocktailsController < ApplicationController
     end
   end
 
+  def update
+    @cocktail = Cocktail.find(params[:id])
+    @cocktail.photo = params[:cocktail][:photo]
+    # @cocktail.update(cocktail_params)
+    @dose = Dose.new
+    if @cocktail.save
+      # nouvelle requete HTTP
+      redirect_to cocktail_path(@cocktail)
+    else
+      # afficher les erreurs si on a pas bien rempli le form
+      render :show
+    end
+  end
+
   private
 
   def cocktail_params
