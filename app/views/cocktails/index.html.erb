@@ -2,6 +2,9 @@
   <div class="banner-content">
     <h1>Serious Cocktailers</h1>
     <p>Learn to drink, change cocktails</p>
+    <p>
+      <span id="banner-typed-text"></span>
+    </p>
     <%= link_to "Add a new cocktail", new_cocktail_path, class: "btn btn-primary btn-lg" %>
   </div>
 </div>
@@ -18,7 +21,7 @@
     <% @cocktails.each do |cocktail| %>
     <div class="col-xs-12 col-sm-4">
 <!-- insert <div class="card"> -->
-      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cocktail.photo? ? (cl_image_path cocktail.photo, height: 300, width: 400, crop: :fill ) : cl_image_path("sya2nsevnhdw6mv0tced.jpg", height: 1000, width: 1000, crop: :fill) %>');">
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cocktail.photo? ? (cl_image_path cocktail.photo, height: 300, width: 400, crop: :fill ) : cl_image_path("sya2nsevnhdw6mv0tced.jpg", height: 300, width: 400, crop: :fill) %>');">
         <div class="card-category"><%= cocktail.name %></div>
           <div class="card-description">
             <p>Very cool cocktail, the best</p>
